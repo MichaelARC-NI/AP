@@ -14,13 +14,13 @@
 
 * **HTML5:** Estructura semántica y metadatos SEO.
 * **CSS3:** Diseño personalizado con variables, Flexbox y transiciones.
-* **JavaScript (Vanilla):** Lógica para el modo oscuro, lectura de audio y navegación.
+* **JavaScript (Vanilla):** Lógica para la navegación.
 
 ## 📂 Estructura del Proyecto
 
 * `index.html`: Estructura principal y contenido de los temas.
 * `styles.css`: Estilos visuales, temas (claro/oscuro) y diseño responsivo.
-* `script.js`: Funcionalidades interactivas y motor de voz.
+* `script.js`: Funcionalidades interactivas.
 
 ## 📖 Cómo usarlo
 
