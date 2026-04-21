@@ -1,0 +1,668 @@
+/* Variables de color para mantener un tema consistente */
+:root {
+    --primary-color: #6b0000; /* Rojo vino oscuro */
+    --secondary-color: #f8f9fa; /* Gris muy claro */
+    --text-color: #333333;
+    --gold: #c5a059;
+}
+
+/* Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lora', serif; /* Fuente clásica y de buena lectura */
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Encabezado Principal */
+.hero {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    border-bottom: 5px solid var(--gold);
+}
+
+.hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.hero .subtitle {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--gold);
+}
+
+/* Barra de Navegación */
+.navbar {
+    background-color: #222;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+/* Secciones */
+.section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.bg-light {
+    background-color: var(--secondary-color);
+}
+
+.section h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+}
+
+/* Sistema de Tarjetas (Grid) */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-top: 3px solid var(--gold);
+}
+
+.card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: sans-serif;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #4a0000;
+}
+
+/* Pie de página */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   ESTILOS PARA LA SECCIÓN DE NIVELES
+   ========================================= */
+
+.niveles-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.nivel-card {
+    background: white;
+    border-left: 6px solid var(--primary-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.3s ease;
+}
+
+.nivel-card:hover {
+    transform: translateY(-5px); /* Efecto de saltito al pasar el ratón */
+}
+
+.nivel-badge {
+    background-color: var(--gold);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nivel-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.btn-outline {
+    margin-top: 20px;
+    padding: 8px 20px;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: sans-serif;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Diseño responsivo: En pantallas grandes, las tarjetas se ponen una al lado de la otra */
+@media (min-width: 768px) {
+    .niveles-container {
+        flex-direction: row;
+    }
+    
+    .nivel-card {
+        flex: 1; /* Hace que las 3 tarjetas midan lo mismo */
+    }
+}
+/* =========================================
+   ESTILOS PARA EL CONTENIDO (NIVEL 1)
+   ========================================= */
+
+.leccion-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+/* Barra Lateral (Temario) */
+.temario {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--primary-color);
+}
+
+.temario h3 {
+    color: var(--primary-color);
+    font-family: 'Cinzel', serif;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.temario ol {
+    list-style: none;
+    padding: 0;
+}
+
+.temario li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.temario a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.temario li.activo a, .temario a:hover {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Artículo Principal */
+.contenido-tema {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.tema-header {
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 20px;
+}
+
+.tema-header h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.intro-destacada {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #555;
+    background: var(--secondary-color);
+    padding: 15px;
+    border-left: 4px solid var(--gold);
+}
+
+.contenido-tema h3 {
+    color: var(--primary-color);
+    margin: 30px 0 15px 0;
+    font-family: 'Cinzel', serif;
+}
+
+.contenido-tema p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+/* Cajas de Argumentos */
+.argumento-box {
+    padding: 25px;
+    border-radius: 8px;
+    margin: 30px 0;
+}
+
+.argumento-box h3 {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.argumento-box ul {
+    margin-left: 20px;
+}
+
+.argumento-box li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.protestante {
+    background-color: #fff3f3;
+    border: 1px solid #ffcccc;
+}
+
+.catolico {
+    background-color: #f0f8ff;
+    border: 1px solid #cce6ff;
+}
+
+/* Material de apoyo */
+.material-apoyo {
+    background: #fdfaf2;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px dashed var(--gold);
+    margin-top: 40px;
+}
+
+.material-apoyo a {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Diseño para computadoras (Grid) */
+@media (min-width: 992px) {
+    .leccion-container {
+        flex-direction: row;
+    }
+    
+    .temario {
+        width: 300px;
+        flex-shrink: 0;
+        position: sticky;
+        top: 80px; /* Para que el menú se quede fijo al bajar leyendo */
+        align-self: flex-start;
+    }
+    
+    .contenido-tema {
+        flex-grow: 1;
+    }
+}
+
+/* Estilos para sección de contacto */
+#contacto {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+}
+
+#contacto h2 {
+    color: #fff;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 15px;
+}
+
+#contacto p {
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 480px) {
+    .social-links a {
+        padding: 12px 18px;
+        font-size: 0.9rem;
+    }
+}
+
+/* =========================================
+   BOTONES FLOTANTES (FIJOS)
+   ========================================= */
+
+.floating-controls {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.floating-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+    font-size: 20px;
+}
+
+.floating-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+/* Botón modo oscuro */
+#theme-toggle {
+    background: linear-gradient(135deg, #ffd700, #ffaa00);
+    color: #333;
+}
+
+/* Botón reproducir audio */
+#audio-toggle {
+    background: linear-gradient(135deg, #6b0000, #8b0000);
+    color: white;
+}
+
+#audio-toggle.playing {
+    background: linear-gradient(135deg, #25D366, #20bf6b);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    50% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+}
+
+/* Botón subir */
+#scroll-top {
+    background: linear-gradient(135deg, #333, #555);
+    color: white;
+    opacity: 0.7;
+}
+
+#scroll-top:hover {
+    opacity: 1;
+}
+
+/* Ocultar botón subir cuando está arriba */
+#scroll-top.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* =========================================
+   MODO OSCURO
+   ========================================= */
+
+body.dark-mode {
+    --primary-color: #8b0000;
+    --secondary-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --gold: #d4a84b;
+    background-color: #121212;
+}
+
+body.dark-mode .hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d0000 100%);
+}
+
+body.dark-mode .navbar {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode .card,
+body.dark-mode .temario,
+body.dark-mode .contenido-tema,
+body.dark-mode .nivel-card {
+    background: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.dark-mode .temario a,
+body.dark-mode .contenido-tema p,
+body.dark-mode .contenido-tema h3,
+body.dark-mode .nivel-card h3,
+body.dark-mode .nivel-card p {
+    color: #e0e0e0;
+}
+
+body.dark-mode .section {
+    background-color: #121212;
+}
+
+body.dark-mode .bg-light {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode footer {
+    background-color: #0a0a0a;
+    color: #aaa;
+}
+
+body.dark-mode .btn-outline {
+    border-color: #8b0000;
+    color: #e0e0e0;
+}
+
+body.dark-mode .btn-outline:hover {
+    background-color: #8b0000;
+    color: #fff;
+}
+
+body.dark-mode .intro-destacada {
+    background: #2a2a2a;
+    color: #ccc;
+}
+
+body.dark-mode .hero {
+    background: linear-gradient(135deg, #2d0000 0%, #1a0000 100%);
+}
+
+body.dark-mode .argumento-box.protestante {
+    background-color: #2d1a1a;
+    border-color: #5c2a2a;
+}
+
+body.dark-mode .argumento-box.catolico {
+    background-color: #1a2d3a;
+    border-color: #2a4a5c;
+}
+
+body.dark-mode .material-apoyo {
+    background: #1a1a1a;
+    color: #ccc;
+}
+
+body.dark-mode .material-apoyo a {
+    color: #ff6b6b;
+}
+
+body.dark-mode .hero h1,
+body.dark-mode .hero .subtitle {
+    color: #fff;
+}
+
+body.dark-mode .hero .subtitle {
+    color: #d4a84b;
+}
+
+body.dark-mode .card {
+    border-top-color: #d4a84b;
+}
+
+body.dark-mode .nivel-card {
+    border-left-color: #8b0000;
+}
+
+body.dark-mode .nivel-badge {
+    background-color: #8b0000;
+}
+
+body.dark-mode .section h2 {
+    color: #ff6b6b;
+}
+
+body.dark-mode .contenido-tema h2,
+body.dark-mode .contenido-tema h3,
+body.dark-mode .contenido-tema h4 {
+    color: #ff6b6b;
+}
+
+body.dark-mode .contenido-tema {
+    border-top: 4px solid #8b0000;
+}
+
+body.dark-mode .tema-header {
+    border-bottom-color: #d4a84b;
+}
+
+body.dark-mode .temario {
+    border-top-color: #8b0000;
+}
+
+body.dark-mode .temario h3 {
+    color: #ff6b6b;
+}
+
+body.dark-mode .temario li.activo a {
+    color: #ff6b6b;
+}
+
+body.dark-mode .temario a:hover {
+    color: #ff6b6b;
+}
+
+body.dark-mode .contenido-tema strong {
+    color: #ffd700;
+}
+
+body.dark-mode .contenido-tema a {
+    color: #ff6b6b;
+}
+
+body.dark-mode .leccion-container {
+    background: transparent;
+}
+
+/* Estilos para el contacto en modo oscuro */
+body.dark-mode #contacto {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+}
+
+body.dark-mode .btn-outline:hover {
+    background-color: #8b0000;
+    color: #fff;
+}
+
+body.dark-mode .intro-destacada {
+    background: #2a2a2a;
+    color: #ccc;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 480px) {
+    .floating-controls {
+        bottom: 15px;
+        right: 15px;
+        gap: 10px;
+    }
+    
+    .floating-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+}
