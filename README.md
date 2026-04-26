@@ -5,8 +5,6 @@
 ## 🚀 Características Principales
 
 * **Contenido Estructurado:** Temas organizados para una lectura fácil y formativa.
-* **Modo Oscuro:** Interfaz adaptable para una lectura cómoda en cualquier entorno.
-* **Lectura en Voz Alta:** Integración de JavaScript para escuchar los artículos (Speech Synthesis).
 * **Diseño Responsivo:** Optimizado para dispositivos móviles y escritorio.
 * **Interactividad:** Navegación suave (Smooth Scrolling) y mensajes de bienvenida.
 
